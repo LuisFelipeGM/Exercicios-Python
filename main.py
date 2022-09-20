@@ -1,7 +1,3 @@
-
-from numpy import append
-
-
 def tamanho_list():
     '''
     Função
@@ -78,8 +74,32 @@ def pares(lista):
         i += 1
     return par
 
+def impares(lista):
+    impares = []
+    i = 0
+    while(i < len(lista)):
+        if(lista[i] % 2 != 0):
+            impares.append(lista[i])
+        i += 1
+    return impares
 
+def numero():
+   
+    n = int(input("digite um numero para ver se o mesmo se encontra na lista: "))
+    return n
 
+def contido(lista, n):
+
+    x = None
+    i = 0
+    while i < len(lista):
+        if n == lista[i]:
+           x=(f"{n} contido na lista")
+        i+=1
+    if x == None:
+        return f"{n} não contido na lista"
+    else: 
+        return x
 
 def main():
     '''
@@ -100,6 +120,13 @@ def main():
     popular(lista)
     imprimir(lista)
     print("------------------")
+    imprimir(pares(lista))
+    print("------------------")
+    imprimir(impares(lista))
+    print("------------------")
+    n = numero()
+    print(contido(lista, n))
+
     
 
 main()
